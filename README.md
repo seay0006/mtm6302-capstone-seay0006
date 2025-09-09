@@ -1,1 +1,3 @@
-# mtm6302-capstone-seay0006
+Colin Seay
+041097377
+Capstone Project - Part 1
