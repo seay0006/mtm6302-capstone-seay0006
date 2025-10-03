@@ -8,6 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="body">
     <h1>APOD Search</h1>
 
     <div class="navbar">
@@ -17,24 +18,20 @@
 
     <div class="select-date">
         <form id="date-form">
-            <label for="date-input">Select a date:</label>
+            <label for="date-input">Enter Date:</label>
             <input type="date" id="date-input" name="date-input" required>
-            <button type="submit">Get Picture</button>
+            <button type="submit">Get APOD Image</button>
         </form>
     </div>
-    <div class="apod-image">
-        <h2 id="apod-title"></h2>
-        <img id="apod-img" src="" alt="Astronomy Picture of the Day" style="max-width: 100%; height: auto;">
-        <p id="apod-explanation"></p>
-        <button id="favorite-btn">
-            <img src="/images/favourites-icon.png" alt="star icon">
-        </button>
-    </div>
+    <div id="image-container">
+        <!-- Image will be displayed here -->
     <h2>Title</h2>
-
-
     <h2>Date of Image</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis justo vitae varius pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam vehicula fermentum tincidunt. Proin consectetur diam sapien, et molestie odio dapibus at. Nulla tincidunt est sit amet lectus sollicitudin efficitur. Mauris tempus consequat lobortis. Curabitur viverra accumsan feugiat. Praesent cursus nunc vel nisi aliquam scelerisque. Vivamus viverra, est in malesuada tristique, metus ligula sollicitudin enim, non interdum metus risus et nulla. Ut dignissim magna vel diam consectetur ultricies. Nullam imperdiet hendrerit sodales. Praesent sollicitudin ac ipsum et varius. Maecenas mi sem, malesuada nec enim sit amet, aliquam interdum ipsum. Mauris rhoncus est nec tellus ullamcorper, nec auctor leo eleifend. Suspendisse id hendrerit nunc, vitae iaculis elit.</p>
+
+    <footer>
+        Authors & editors: Robert Nemiroff (MTU) & Jerry Bonnell (UMCP)NASA Official: Amber Straughn Specific rights apply.NASA Web Privacy, Accessibility, Notices;A service of: ASD at NASA / GSFC,NASA Science Activation& Michigan Tech. U.
+    </footer>
+</div>
 </body>
 </html>
