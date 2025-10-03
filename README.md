@@ -26,4 +26,4 @@ __________________
 
 1. I only added the HTML and CSS files - I did this since any file in my work should be important. By only using these two I limited my search pool for finding solutions to my problems. Having js as another solution could have gotten me more confused
 
-2. 
+2. To hit requirement 2, I needed to add a form for the users to select there date in a calender, I did this by
