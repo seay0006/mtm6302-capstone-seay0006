@@ -1,3 +1,17 @@
+/* Requirement 3: The prototype should be responsive.  */
+/* Reactive media query for desktop */
+@media screen and (max-width: 1868px) {
+  /* Styles for screens 768px wide or smaller */
+  body {
+    background-color: rgb(128, 173, 240);
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+  }
+
+}
+/* Reactive media query for mobile */
 @media screen and (max-width: 768px) {
   /* Styles for screens 768px wide or smaller */
   body {
