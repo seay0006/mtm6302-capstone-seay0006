@@ -33,7 +33,7 @@ __________________
 
 4. I didn't use any, HOWEVER, I did intend on it though due to no time in my personal life I couldnt find space to do it well
 
-5. 
+5. I ended up changing part 1, i added a js file so taht i could plug the api through. wihtout it I dont believe i had another option
 
 
 ---------------------------

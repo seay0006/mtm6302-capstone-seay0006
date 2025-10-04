@@ -77,11 +77,10 @@ body {
   #apod-image{
     /* this should allow a larger image then by default */
     max-width: 700px;
+    
 
   }
-  #apod-image:hover {
-    transform: scale(1.5);
-  }
+  
 }
 /* Desktop Queries */
 @media screen and (min-width: 1025px) {
@@ -108,4 +107,7 @@ body {
   text-align: center; /* Example styling */
   padding: 10px 0; /* Example styling */
   padding-top: 150px;
+}
+footer p {
+  margin: 5px 0; /* Space between paragraphs */
 }
