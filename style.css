@@ -7,7 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #fff;
+  background-color: #640d4e;
+  color: rgb(182, 182, 182);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +17,9 @@ body {
   padding: 1rem;
   text-align: center;
 
+    h1{
+      color: white;
+    }
 }
 #apod-container {
   /* this is trying to cap the container width so that the images stop going off screen */
@@ -38,37 +42,70 @@ body {
     border: 1px solid #ccc;
     
   }
-  #apod-image:hover {
-    transform: scale(1.05);
-  }
-/* Requirement 3: The prototype should be responsive.  */
-/* Reactive media query for desktop */
-@media screen and (max-width: 1868px) {
-  /* Styles for screens 768px wide or smaller */
-  body {
-    background-color: #751966;
-    padding: 0.5rem;
-  }
-  #apod-title{
-    font-size: large;
-  }
-}
-/* Reactive media query for mobile */
-@media screen and (max-width: 768px) {
-  /* Styles for screens 768px wide or smaller */
-  body {
-    background-color: rgb(171, 128, 240);
-    background-image: url("https://apod.nasa.gov/apod/ap250917.html");
-    padding: 0.5rem;
-  }
-  #apod-title{
-    font-size: 1rem;
-  }
-  #apod-image{
-    max-width: 650px;
-  }
-}
+  
+
 
 
 /* Mobile Queries - All content above is pre updated sizing */
+@media screen and (max-width: 769px) {
+  #apod-container {
+    /* this is setting the max width of the mobile */
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    
+  }
+  #apod-Image {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+  }
+  #apod-image:hover {
+    transform: scale(1.5);
+  }
+}
+/* Tablet Queries */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #apod-conatiner {
+    /* setting the tablet sized max width */
+    max-width: 700px;
 
+  }
+  #apod-image{
+    /* this should allow a larger image then by default */
+    max-width: 700px;
+
+  }
+  #apod-image:hover {
+    transform: scale(1.5);
+  }
+}
+/* Desktop Queries */
+@media screen and (min-width: 1025px) {
+  #apod-container {
+    max-width: 1200px;
+  }
+  #apod-Image {
+    max-width: 1200px;
+  }
+  #apod-image:hover {
+    transform: scale(1.5);
+  }
+  
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  top: auto; /* Ensures it stays at the bottom */
+  left: 0; /* Ensures it starts from the left edge */
+  width: 100%; /* Makes it span the full width */
+  background-color: #333; /* Example styling */
+  color: white; /* Example styling */
+  text-align: center; /* Example styling */
+  padding: 10px 0; /* Example styling */
+  padding-top: 150px;
+}

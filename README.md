@@ -43,4 +43,7 @@ __________________
 
 2. I encountered a difficulty in applying an image in the background of my website, being as mine currently in the mockup shows a space background. I am going to instead get around this by making stars on a dark purple bg colour.
 
-3. Currently struggling to get the image to follow the max width im stating, i am attempting to redo all of my media queries
+3. Currently struggling to get the image to follow the max width im stating, i am attempting to redo all of my media queries,
+-   So it turns out i was doing the same mistake as my firs issue... so ugh thats embaressing
+
+4. 
