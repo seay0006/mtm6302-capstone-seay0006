@@ -16,10 +16,20 @@
   /* Styles for screens 768px wide or smaller */
   body {
     background-color: rgb(171, 128, 240);
+    background-image: url("https://apod.nasa.gov/apod/ap250917.html");
     align-content: center;
     align-items: center;
     align-self: center;
     text-align: center;
+  }
+
+  #apod-image {
+    width: 100%;
+    height: auto;
+  }
+  #apod-container {
+    width: 100%;
+    height: auto;
   }
 
 }
