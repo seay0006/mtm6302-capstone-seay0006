@@ -18,8 +18,8 @@ body {
 
 }
 #apod-container {
+  /* this is trying to cap the container width so that the images stop going off screen */
     width: 100%;
-    max-width: 650px;
     margin: 0 auto;
   }
 #apod title {
@@ -27,16 +27,20 @@ body {
     margin-top: 1rem;
     font-weight: bold;
   }
+  /* THIS IS THE APOD IMAGE SPOT - DONT LOSE */
   #apod-image {
     display: block;
+    /* this is aiming to stop it going off screen */
     max-width: 650px;
     width: 100%;
     height: auto;
     margin: 1rem auto;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    
   }
-
+  #apod-image:hover {
+    transform: scale(1.05);
+  }
 /* Requirement 3: The prototype should be responsive.  */
 /* Reactive media query for desktop */
 @media screen and (max-width: 1868px) {
@@ -48,9 +52,6 @@ body {
   #apod-title{
     font-size: large;
   }
-  #apod-image{
-    max-width: 100%;
-}
 }
 /* Reactive media query for mobile */
 @media screen and (max-width: 768px) {
@@ -58,15 +59,15 @@ body {
   body {
     background-color: rgb(171, 128, 240);
     background-image: url("https://apod.nasa.gov/apod/ap250917.html");
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
+    padding: 0.5rem;
   }
-
-  
-  
-
-
-
+  #apod-title{
+    font-size: 1rem;
+  }
+  #apod-image{
+    max-width: 650px;
+  }
 }
+
+
+
