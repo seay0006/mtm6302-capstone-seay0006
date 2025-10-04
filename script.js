@@ -35,6 +35,26 @@ form.addEventListener('submit', async (event) => {
 // this is the actual data from the api call "data" is the variable name
         const data = await response.json();
         console.log(data);
-    }
+    
 // 
-})
+    if (data.media_type === 'image') {
+        apodImage.src = data.url;
+        apodImage.alt = data.title;
+        apodImage.style.display = "block";
+    } else {
+        apodImage.style.display = "none";
+    }
+    // this is displaying the data from the api call
+        apodTitle.textContent = data.title;
+    // this explaination is from the api call
+        apodExplanation.textContent = data.explanation;
+    // this is giving credit from the api call
+        apodCredit.textContent = data.copyright ? `Credit: ${data.copyright}` : 'Credit: Public Domain';
+    // this is the error message that shows whenever the input doesn't work
+    } catch (error) {
+        console.error ('Error fetching APOD data:', error);
+        apodTitle.textContent = 'Error fetching APOD data';
+        apodExplanation.textContent = '';
+        apodImage.style.display = 'none';
+    }
+});
