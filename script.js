@@ -1,7 +1,7 @@
 // form for date picker
 const form = document.getElementById('apod-form');
 // apod data
-const apodImage = document.getElementById('apod-image');
+const apodImage = document.getElementById('apod-Image');
 // apod title
 const apodTitle = document.getElementById('apod-title');
 // apod explanation
