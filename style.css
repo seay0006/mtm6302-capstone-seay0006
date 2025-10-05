@@ -61,6 +61,7 @@ a:active {
   /* this is trying to cap the container width so that the images stop going off screen */
     width: 100%;
     margin: 0 auto;
+    display: none;
   }
 #apod title {
     font-size: 1.4rem;
