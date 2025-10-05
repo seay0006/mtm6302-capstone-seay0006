@@ -77,10 +77,10 @@
     renderFavourites();
 }
 if (favouriteBtn) {
-            favouriteBtn.addEventListener('click', () => {
+        favouriteBtn.addEventListener('click', () => {
             if (!currentApod) return;
             let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-
+        });
             if (!favourites.some(item => item.date === currentApod.date)) {
                 favourites.push(currentApod);
                 localStorage.setItem('favourites', JSON.stringify(favourites));
@@ -88,7 +88,7 @@ if (favouriteBtn) {
             } else {
                 alert('Already in favourites!');
             }
-        });
+        };
 
         // this is rending the favourites list
         function renderFavourites() {
@@ -123,5 +123,6 @@ if (favouriteBtn) {
         favouritesList.appendChild(title);
         favouritesList.appendChild(removeBtn);
         favouritesList.appendChild(document.createElement('hr'));
-        }});
-}
+        }
+    };
+
