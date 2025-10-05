@@ -61,9 +61,22 @@
             if (apodExplanation) apodExplanation.textContent = '';
             if (apodImage) apodImage.style.display = 'none';
         }
-
+         });
         // adding the current apods to the favourites tab
-        if (favouriteBtn) {
+        
+    }
+
+        // adding the favourires page functionality
+    function removeFromFavourites(date) {
+        // lets the local storage know to remove the item being fetched to avoid duplicates
+    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+        // this filters the item out of the array, this prevents the item from being seen there after use
+    favourites = favourites.filter(item => item.date !== date);
+        // updates the local storage with the new array
+    localStorage.setItem('favourites', JSON.stringify(favourites));
+    renderFavourites();
+}
+if (favouriteBtn) {
             favouriteBtn.addEventListener('click', () => {
             if (!currentApod) return;
             let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
@@ -76,18 +89,6 @@
                 alert('Already in favourites!');
             }
         });
-    }
-}
-        // adding the favourires page functionality
-    function removeFromFavourites(date) {
-        // lets the local storage know to remove the item being fetched to avoid duplicates
-    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-        // this filters the item out of the array, this prevents the item from being seen there after use
-    favourites = favourites.filter(item => item.date !== date);
-        // updates the local storage with the new array
-    localStorage.setItem('favourites', JSON.stringify(favourites));
-    renderFavourites();
-}
 
         // this is rending the favourites list
         function renderFavourites() {
