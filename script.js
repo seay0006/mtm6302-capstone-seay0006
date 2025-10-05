@@ -268,3 +268,36 @@ document.addEventListener('DOMContentLoaded', () => {
     renderFavourites();
 }
 
+        // this is rending the favourites list
+        function renderFavourites() {
+        // if its on the favourites list then return it
+    if (!favouritesList) return;
+
+    favouritesList.innerHTML = '';
+        //this gets the favourites from local storage and or starts with an empty array
+    const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+        //if the amount of items favourited is 0 then show message below
+    if (favourites.length === 0) {
+        favouritesList.innerHTML = '<p>No favourites yet!</p>';
+        return;
+    }
+
+    favourites.forEach(apod => {
+        const img = document.createElement('img');
+        img.src = apod.url;
+        img.alt = apod.title;
+        img.style.width = '200px';
+
+        const title = document.createElement('p');
+        title.textContent = apod.title;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', () => removeFromFavourites(apod.date));
+
+        favouritesList.appendChild(img);
+        favouritesList.appendChild(title);
+        favouritesList.appendChild(removeBtn);
+        favouritesList.appendChild(document.createElement('hr'));
+    });
+}
