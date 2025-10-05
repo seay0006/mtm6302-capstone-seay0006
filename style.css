@@ -63,7 +63,7 @@ a:active {
     margin: 0 auto;
     display: none;
   }
-#apod title {
+#apod-title {
     font-size: 1.4rem;
     margin-top: 1rem;
     font-weight: bold;
