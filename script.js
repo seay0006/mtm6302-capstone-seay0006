@@ -173,6 +173,76 @@ document.addEventListener('DOMContentLoaded', () => {
             saveToFavourites(currentApod);
 });
     }document.addEventListener('DOMContentLoaded', renderFavourites);
-    
+
 
 });
+
+
+
+// all new code is below this line
+
+//shared elements between index and favourites pages
+
+// searching for the html elements
+    const form = document.getElementById('apod-form');
+    const apodImage = document.getElementById('apod-Image');
+    const apodTitle = document.getElementById('apod-title');
+    const apodExplanation = document.getElementById('apod-explanation');
+    const apodCredit = document.getElementById('apod-credit');
+    const favouriteBtn = document.getElementById('favourite-button');
+    const favouritesList = document.getElementById('favourites-list');
+
+    // Load and display favourites
+    const apiKey = 'jlenSpstq2o0AyuxyfIeUoxfbNrCci1nu8bWzVEC';
+    let currentApod = null;
+
+    //checking for the apod data then fetching if form exists
+    if (form) {
+        // fetching the apod data - async because we call API
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // prevents empty submissions
+            const date = document.getElementById('date-picker').value;
+            // if no date then return
+            if (!date) return;
+            // const since apirul never changes - only date changes
+            const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+            //trying to fetch the api data
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('API request failed');
+
+                const data = await response.json();
+            //if the media type is image then show it
+            if (apodImage) {
+                if (data.media_type === 'image') {
+                    apodImage.src = data.url;
+                    apodImage.alt = data.title;
+                    apodImage.style.display = 'block';
+            // if not image then hide it
+                } else {
+                    apodImage.style.display = 'none';
+                }
+            }
+            // fill in the text content if the elements exist
+            if (apodTitle) apodTitle.textContent = data.title;
+            if (apodExplanation) apodExplanation.textContent = data.explanation;
+            if (apodCredit) apodCredit.textContent = data.copyright
+            // if copyright exists then show it otherwise public domain
+                ? `Credit: ${data.copyright}`
+                : 'Credit: Public Domain';
+
+            currentApod = data;
+            // Store the current APOD data so favourites button can use it
+        } catch (error) {
+            //if the fetch fails then show error message
+            console.error('Error fetching APOD data:', error);
+            if (apodTitle) apodTitle.textContent = 'Error fetching APOD data';
+            if (apodExplanation) apodExplanation.textContent = '';
+            if (apodImage) apodImage.style.display = 'none';
+        }
+
+        // adding the current apods to the favourites tab
+        
+
+
+    });
