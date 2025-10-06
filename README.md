@@ -46,4 +46,6 @@ __________________
 3. Currently struggling to get the image to follow the max width im stating, i am attempting to redo all of my media queries,
 -   So it turns out i was doing the same mistake as my firs issue... so ugh thats embaressing
 
-4. 
+4. I had a massive amount of issues with finding resources to assist me in editing what image would be shown as the default for the API from APOD, as such I have it blank. I couldnt figure it out in time for my submission unfortunately
+
+5. I had a hard time getting my code to pass the validator due to bad syntax, so i had to re write all of that
