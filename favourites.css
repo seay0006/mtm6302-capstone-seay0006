@@ -1,3 +1,43 @@
+body {
+    color: white;
+    background-image: url(/mtm6302-capstone-seay0006/images/N6946N6939pisabarro1024.jpg);
+    list-style-type: none;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+a:link {
+  color: white;
+  
+}
+h1 {
+    text-align: center;
+    
+}
+ul {
+  list-style: none; /* Remove default bullets */
+}
+/* visited link */
+a:visited {
+  color: white;
+  display: grid ;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(199, 100, 149);
+}
+
+/* selected link */
+a:active {
+  color: white;
+}
+
 #favourites-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, (250px, 1fr));
@@ -22,24 +62,40 @@
 }
 .favourite-item img {
   width: 100%;
-  max-width: 200px;
+  max-width: 500px;
   height: auto;
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
-
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 .favourite-item h3, .favourite-item p {
     color: white;
     margin: 10px 0;
 }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+}
 
 /* when you hover the remove button */
-.favourite-item button:hover, .remove-btn:hover {
-  background-color: #a04b4b;
+.favourite-item button:hover, 
+.remove-btn:hover {
+  background-color: #ca2020;
   color: black;
 }
-/*  */
+
 #favourites-list p {
   grid-column: 1 / -1;
   font-size: 1.2rem;
