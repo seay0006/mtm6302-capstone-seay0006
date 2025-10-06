@@ -49,3 +49,5 @@ __________________
 4. I had a massive amount of issues with finding resources to assist me in editing what image would be shown as the default for the API from APOD, as such I have it blank. I couldnt figure it out in time for my submission unfortunately
 
 5. I had a hard time getting my code to pass the validator due to bad syntax, so i had to re write all of that
+
+6. Validator found issues with me having tons of lines of extra code mixed into my work, such as list style types in the body as i was trying to remove old code and ended up with adding it in the wrong place.
