@@ -7,3 +7,7 @@
     margin: 20px;
     padding: 20px;
 }
+.favourite-item:hover {
+    transform: translateY(-5px);
+    border-color: rgb(199, 100, 149);
+}
