@@ -6,8 +6,50 @@
     max-width: 1200px;
     margin: 20px;
     padding: 20px;
+    text-decoration: none;
 }
 .favourite-item:hover {
     transform: translateY(-5px);
     border-color: rgb(199, 100, 149);
+}
+.favourite-item {
+    background-color: rgba(100, 13, 78, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.2);;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.favourite-item img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.favourite-item h3, .favourite-item p {
+    color: white;
+    margin: 10px 0;
+}
+
+/* when you hover the remove button */
+.favourite-item button:hover, .remove-btn:hover {
+  background-color: #a04b4b;
+  color: black;
+}
+/*  */
+#favourites-list p {
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  color: white;
+  padding: 40px;
+}
+/* media query for mobile */
+@media screen and (max-width: 769px) {
+  #favourites-list {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
 }
