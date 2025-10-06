@@ -1,9 +1,0 @@
-#favourites-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, (250px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px;
-    padding: 20px;
-}
