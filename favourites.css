@@ -1,9 +1,9 @@
 body {
     color: white;
     background-image: url(/mtm6302-capstone-seay0006/images/N6946N6939pisabarro1024.jpg);
-    list-style-type: none;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,6 @@ ul {
 /* visited link */
 a:visited {
   color: white;
-  display: grid ;
 }
 
 /* mouse over link */
@@ -53,7 +52,6 @@ a:active {
     border-color: rgb(199, 100, 149);
 }
 .favourite-item {
-    max-width: 500px;
     background-color: rgba(100, 13, 78, 0.6);
     border: 2px solid rgba(255, 255, 255, 0.2);;
     padding: 15px;
