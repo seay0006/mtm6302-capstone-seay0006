@@ -67,6 +67,7 @@ __________________
 
 8. Experiencing an issue with the js file not finding anything under the name favouritesSection - though it should
 
+9. My website is now working with both the favourites and the html,. though its just sittin at the bottom so now i am doing research to make them switch between the two whilst within a single file
 _________________________________
 <!-- RESOURCES USED FROM EXTERNAL SOURCES -->
 1. The favourite icon empty is made by : Gregor Cresnar - https://www.flaticon.com/authors/gregor-cresnar
