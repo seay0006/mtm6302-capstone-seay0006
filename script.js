@@ -145,6 +145,6 @@ if (favouritesList) {
 
 //adding the navigation between sections
 const apodSection = document.getElementById('apod-section');
-const favouriteSection = document.getElementById('favoutires-section');
+const favouriteSection = document.getElementById('favourites-section');
 const linkApod = document.getElementById('link-apod');
 const linkFavourites = document.getElementById('link-favourites');
