@@ -148,3 +148,30 @@ const apodSection = document.getElementById('apod-section');
 const favouriteSection = document.getElementById('favourites-section');
 const linkApod = document.getElementById('link-apod');
 const linkFavourites = document.getElementById('link-favourites');
+
+// this switches the user between sections and highlights the navigation
+function showSection(section) {
+    if (section === 'apod') {
+        apodSection.style.display = 'block';
+        favouritesSection.style.display = 'none';
+        linkApod.classList.add('active');
+        linkFavourites.classList.remove('active');
+    }
+    else if (section === 'favourites') {
+        apodSection.style.display = 'none';
+        favouritesSection.style.display = 'block';
+        linkFavourites.classList.add('active');
+        linkApod.classList.remove('active');
+
+        //this is allowing the system to refresh the favourites list when switching the tab, to get around refreshing.
+        renderFavourites();
+    }
+}
+
+//this is setting which section is showed on launch (in our case its the apod screen not favourites)
+showSection('apod');
+
+//this watches for the "click" action then navigates us to the proper section (APOD)
+linkApod.addEventListener('click', (e) => {
+    e.preventDefault(); showSection ('apod');
+})

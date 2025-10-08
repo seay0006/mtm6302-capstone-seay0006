@@ -65,8 +65,12 @@ __________________
     <!-- beginning of part-4 -->
 7. With the new requirements listed, I now need to remove my "favourites.html page and need to build it into the index.html page
 
+8. Experiencing an issue with the js file not finding anything under the name favouritesSection - though it should
+
 _________________________________
 <!-- RESOURCES USED FROM EXTERNAL SOURCES -->
 1. The favourite icon empty is made by : Gregor Cresnar - https://www.flaticon.com/authors/gregor-cresnar
 2. The favourite icon full is made by :  Freepik - https://www.freepik.com/
-3. Background image is pulled from APOD
+3. Background image is pulled from APOD -https://api.nasa.gov/ - key is listed within code
+
+4. 
