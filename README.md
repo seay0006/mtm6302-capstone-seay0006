@@ -35,6 +35,12 @@ __________________
 
 5. I ended up changing part 1, i added a js file so taht i could plug the api through. wihtout it I dont believe i had another option
 
+<!-- Part 4 below -->
+1. I needed to change the <nav> area to incorporate moving my favourites.html over to the index.html since the new requirements state I can only have 1 html page.
+    - I started this by changing my <a href> into <a href = "#"> then linking the APOD and Favourites.
+
+
+2. I divided my html page into sections for organisation reasons, keeping my two seperate pages more clearly seperate.
 
 ---------------------------
     <!-- DIFFICULTIES -->
