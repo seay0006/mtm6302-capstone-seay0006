@@ -51,3 +51,12 @@ __________________
 5. I had a hard time getting my code to pass the validator due to bad syntax, so i had to re write all of that
 
 6. Validator found issues with me having tons of lines of extra code mixed into my work, such as list style types in the body as i was trying to remove old code and ended up with adding it in the wrong place.
+
+    <!-- beginning of part-4 -->
+7. With the new requirements listed, I now need to remove my "favourites.html page and need to build it into the index.html page
+
+_________________________________
+<!-- RESOURCES USED FROM EXTERNAL SOURCES -->
+1. The favourite icon empty is made by : Gregor Cresnar - https://www.flaticon.com/authors/gregor-cresnar
+2. The favourite icon full is made by :  Freepik - https://www.freepik.com/
+3. Background image is pulled from APOD
