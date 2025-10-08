@@ -140,3 +140,9 @@ function renderFavourites() {
 if (favouritesList) {
     renderFavourites();
 }
+
+// part-4 below
+
+//adding the navigation between sections
+const apodSection = document.getElementById('apod-section');
+const favouriteSection = document.getElementById('favoutires-section');
