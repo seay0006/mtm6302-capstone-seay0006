@@ -42,6 +42,10 @@ __________________
 
 2. I divided my html page into sections for organisation reasons, keeping my two seperate pages more clearly seperate.
 
+3. Moved the <script> for my js file to the bottom of index.html
+
+4. Adding navigation between section at the bottom of my js file under comment part-4 begins here
+
 ---------------------------
     <!-- DIFFICULTIES -->
 

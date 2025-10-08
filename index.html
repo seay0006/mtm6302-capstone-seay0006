@@ -15,15 +15,17 @@
             <li><a href="#" id="link-favourites">Favourites</a></li>
         </ul>
     </nav>
-    
+
+    <!-- APOD SECTION BELOW -->
+     <section id="apod-section">
+        <form id="apod-form">
     <!-- this is the date picker -->
-    <form id="apod-form">
         <label for="date-picker">Pick a Date! :D</label>
         <input type="date" id="date-picker" name="date" required>
         <button type="submit">Get your Apod Image</button>
     </form>
     <!-- this is the apod image -->
-    <div id="apod-container">
+     <div id="apod-container">
         <img id="apod-Image" src="" alt="Astronomy Picture of the Day">
     </div>
     <!-- this is the apod information -->
@@ -31,14 +33,24 @@
     <p id="apod-explanation"></p>
     <p id="apod-credit"></p>
     <button id = "favourite-button">Click here to favourite</button>
-   
-    
-    <script src="script.js"></script>
+     </section>
+
+     <!-- FAVOURITES SECTION BELOW -->
+      <section id="favourites-section">
+        <h1>My Favourite APOD's</h1>
+        <div id="favourites-list">
+            <!-- this is where the favourites will be shown -->
+        </div>
+      </section>
+
+  
 
     <footer>
         <p>Developed by Colin Seay for MTM6302 - Capstone Project</p>
         <p>Data provided by NASA's Astronomy Picture of the Day (APOD) API</p>
         <p><a href="https://api.nasa.gov/">https://api.nasa.gov/</a></p>
     </footer>
+
+      <script src="script.js"></script>
 </body>
 
