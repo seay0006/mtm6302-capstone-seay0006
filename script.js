@@ -171,7 +171,14 @@ function showSection(section) {
 //this is setting which section is showed on launch (in our case its the apod screen not favourites)
 showSection('apod');
 
+//THIS IS THE ACTUAL FUNCTION THAT ALLOWS US TO NAVIGATE, THIS IS CRUITAL!!
+
 //this watches for the "click" action then navigates us to the proper section (APOD)
 linkApod.addEventListener('click', (e) => {
     e.preventDefault(); showSection ('apod');
+})
+
+// this watches for the same as above only its the favourites nav
+linkApod.addEventListener('click', (e) => {
+    e.preventDefault(); showSection ('favourites');
 })
