@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astronomy Picture of the Day</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astronomy Picture of the Day</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Astronomy Picture of the Day</h1>
+  <h1>Astronomy Picture of the Day</h1>
 
-    <nav>
-        <ul>
-            <li><a href="#" id="link-apod" class="active">APOD</a></li>
-            <li><a href="#" id="link-favourites">Favourites</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="#" id="link-apod" class="active">APOD</a></li>
+      <li><a href="#" id="link-favourites">Favourites</a></li>
+    </ul>
+  </nav>
 
-    <!-- APOD SECTION -->
-    <section id="apod-section">
-        <form id="apod-form">
-            <label for="date-picker">Pick a Date! :D</label>
-            <input type="date" id="date-picker" name="date" required>
-            <button type="submit">Get your APOD Image</button>
-        </form>
+  <!-- APOD SECTION -->
+  <section id="apod-section">
+    <form id="apod-form">
+      <label for="date-picker">Pick a Date! :D</label>
+      <input type="date" id="date-picker" name="date" required>
+      <button type="submit">Get your APOD Image</button>
+    </form>
 
-        <div id="apod-container">
-            <img id="apod-Image" src="" alt="Astronomy Picture of the Day">
-        </div>
+    <div id="apod-container">
+      <img id="apod-Image" src="" alt="Astronomy Picture of the Day">
+    </div>
 
-        <h2 id="apod-title"></h2>
-        <p id="apod-explanation"></p>
-        <p id="apod-credit"></p>
-        <button id="favourite-button" title="Add to favourites"></button>
-    </section>
+    <h2 id="apod-title"></h2>
+    <p id="apod-explanation"></p>
+    <p id="apod-credit"></p>
+    <button id="favourite-button" title="Add to favourites"></button>
+  </section>
 
-    <!-- FAVOURITES SECTION -->
-    <section id="favourites-section">
-        <h1>My Favourite APOD's</h1>
-        <div id="favourites-list">
-            <!-- Favourites will appear here -->
-        </div>
-    </section>
+  <!-- FAVOURITES SECTION -->
+  <section id="favourites-section">
+    <h1>My Favourite APODs</h1>
+    <div id="favourites-list"></div>
+  </section>
 
-    <footer>
-        <p>Developed by Colin Seay for MTM6302 - Capstone Project</p>
-        <p>Data provided by NASA's Astronomy Picture of the Day (APOD) API</p>
-        <p><a href="https://api.nasa.gov/">https://api.nasa.gov/</a></p>
-    </footer>
+  <footer>
+    <p>Developed by Colin Seay for MTM6302 - Capstone Project</p>
+    <p>Data provided by NASA's APOD API</p>
+    <p><a href="https://api.nasa.gov/">https://api.nasa.gov/</a></p>
+  </footer>
 
-    <script src="script.js"></script>
-    
+  <script src="script.js"></script>
 </body>
 </html>
