@@ -1,8 +1,4 @@
-// all new code is below this line
-
-// shared elements between index and favourites pages
-
-// searching for the html elements
+// Shared elements
 const form = document.getElementById('apod-form');
 const apodContainer = document.getElementById('apod-container');
 const apodImage = document.getElementById('apod-Image');
@@ -12,57 +8,54 @@ const apodCredit = document.getElementById('apod-credit');
 const favouriteBtn = document.getElementById('favourite-button');
 const favouritesList = document.getElementById('favourites-list');
 
-// Load and display favourites
+const apodSection = document.getElementById('apod-section');
+const favouritesSection = document.getElementById('favourites-section');
+const linkApod = document.getElementById('link-apod');
+const linkFavourites = document.getElementById('link-favourites');
+
 const apiKey = 'jlenSpstq2o0AyuxyfIeUoxfbNrCci1nu8bWzVEC';
 let currentApod = null;
 
-// checking for the apod data then fetching if form exists
+// Fetch APOD
 if (form) {
-    // fetching the apod data - async because we call API
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault(); // prevents empty submissions
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         const date = document.getElementById('date-picker').value;
-        // if no date then return
         if (!date) return;
-        // const since apiUrl never changes - only date changes
+
         const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
-        
-        // trying to fetch the api data
+
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) throw new Error('API request failed');
-
             const data = await response.json();
-            
-            // show the container when data loads
+
+            // Show container
             if (apodContainer) apodContainer.style.display = 'block';
-            
-            // if the media type is image then show it
+
+            // Display image if media_type is image
             if (apodImage) {
                 if (data.media_type === 'image') {
                     apodImage.src = data.url;
                     apodImage.alt = data.title;
                     apodImage.style.display = 'block';
-                // if not image then hide it
                 } else {
                     apodImage.style.display = 'none';
                 }
             }
-            
-            // fill in the text content if the elements exist
+
+            // Text content
             if (apodTitle) apodTitle.textContent = data.title;
             if (apodExplanation) apodExplanation.textContent = data.explanation;
             if (apodCredit) {
                 apodCredit.textContent = data.copyright
-                    // if copyright exists then show it otherwise public domain
                     ? `Credit: ${data.copyright}`
                     : 'Credit: Public Domain';
             }
 
             currentApod = data;
-            // Store the current APOD data so favourites button can use it
+
         } catch (error) {
-            // if the fetch fails then show error message
             console.error('Error fetching APOD data:', error);
             if (apodTitle) apodTitle.textContent = 'Error fetching APOD data';
             if (apodExplanation) apodExplanation.textContent = '';
@@ -71,23 +64,11 @@ if (form) {
     });
 }
 
-// adding the favourites page functionality
-function removeFromFavourites(date) {
-    // lets the local storage know to remove the item being fetched to avoid duplicates
-    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-    // this filters the item out of the array, this prevents the item from being seen there after use
-    favourites = favourites.filter(item => item.date !== date);
-    // updates the local storage with the new array
-    localStorage.setItem('favourites', JSON.stringify(favourites));
-    renderFavourites();
-}
-
-// adding the current apods to the favourites tab
+// Add to favourites
 if (favouriteBtn) {
     favouriteBtn.addEventListener('click', () => {
         if (!currentApod) return;
         let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-        
         if (!favourites.some(item => item.date === currentApod.date)) {
             favourites.push(currentApod);
             localStorage.setItem('favourites', JSON.stringify(favourites));
@@ -98,87 +79,76 @@ if (favouriteBtn) {
     });
 }
 
-// this is rendering the favourites list
-function renderFavourites() {
-    // if its on the favourites list then return it
-    if (!favouritesList) return;
+// Remove from favourites
+function removeFromFavourites(date) {
+    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    favourites = favourites.filter(item => item.date !== date);
+    localStorage.setItem('favourites', JSON.stringify(favourites));
+    renderFavourites();
+}
 
+// Render favourites
+function renderFavourites() {
+    if (!favouritesList) return;
     favouritesList.innerHTML = '';
-    // this gets the favourites from local storage and or starts with an empty array
+
     const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
-    // if the amount of items favourited is 0 then show message below
     if (favourites.length === 0) {
         favouritesList.innerHTML = '<p>No favourites yet!</p>';
         return;
     }
-    
-    // this loops the favourited apods
+
     favourites.forEach(apod => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('favourite-item');
+
         const img = document.createElement('img');
         img.src = apod.url;
         img.alt = apod.title;
-        img.style.width = '200px';
-        
-        // this creates a paragraph element for the apod title
-        const title = document.createElement('p');
+
+        const title = document.createElement('h3');
         title.textContent = apod.title;
 
-        // this is creating a button to remove this apod from the favourites
         const removeBtn = document.createElement('button');
         removeBtn.textContent = 'Remove';
-        // adding a click that calls from remove from favourites with the apod presents date
+        removeBtn.classList.add('remove-btn');
         removeBtn.addEventListener('click', () => removeFromFavourites(apod.date));
 
-        favouritesList.appendChild(img);
-        favouritesList.appendChild(title);
-        favouritesList.appendChild(removeBtn);
-        favouritesList.appendChild(document.createElement('hr'));
+        itemDiv.appendChild(img);
+        itemDiv.appendChild(title);
+        itemDiv.appendChild(removeBtn);
+
+        favouritesList.appendChild(itemDiv);
     });
 }
 
-// Load favourites on page load if on favourites page
-if (favouritesList) {
-    renderFavourites();
-}
+// Load favourites on page load
+if (favouritesList) renderFavourites();
 
-// part-4 below
-
-//adding the navigation between sections
-const apodSection = document.getElementById('apod-section');
-const favouriteSection = document.getElementById('favourites-section');
-const linkApod = document.getElementById('link-apod');
-const linkFavourites = document.getElementById('link-favourites');
-
-// this switches the user between sections and highlights the navigation
+// Navigation
 function showSection(section) {
     if (section === 'apod') {
         apodSection.style.display = 'block';
         favouritesSection.style.display = 'none';
         linkApod.classList.add('active');
         linkFavourites.classList.remove('active');
-    }
-    else if (section === 'favourites') {
+    } else if (section === 'favourites') {
         apodSection.style.display = 'none';
         favouritesSection.style.display = 'block';
         linkFavourites.classList.add('active');
         linkApod.classList.remove('active');
-
-        //this is allowing the system to refresh the favourites list when switching the tab, to get around refreshing.
         renderFavourites();
     }
 }
 
-//this is setting which section is showed on launch (in our case its the apod screen not favourites)
 showSection('apod');
 
-//THIS IS THE ACTUAL FUNCTION THAT ALLOWS US TO NAVIGATE, THIS IS CRUITAL!!
-
-//this watches for the "click" action then navigates us to the proper section (APOD)
 linkApod.addEventListener('click', (e) => {
-    e.preventDefault(); showSection ('apod');
-})
+    e.preventDefault();
+    showSection('apod');
+});
 
-// this watches for the same as above only its the favourites nav
-linkApod.addEventListener('click', (e) => {
-    e.preventDefault(); showSection ('favourites');
-})
+linkFavourites.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection('favourites');
+});

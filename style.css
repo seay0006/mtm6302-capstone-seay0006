@@ -1,167 +1,175 @@
-/* css reset */
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   font-family: Arial, sans-serif;
   background-color: #640d4e;
   background-image: url(/mtm6302-capstone-seay0006/images/N6946N6939pisabarro1024.jpg);
-  color: rgb(255, 254, 254);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 20px;
   text-align: center;
-
-    h1{
-      color: white;
-    }
-    
-
 }
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+
+/* Headings */
+h1, h2, h3, p {
+  color: #fff;
+}
+
+h1 {
   margin-bottom: 20px;
 }
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+nav li {
+  display: inline-block;
+}
+
 nav a {
   text-decoration: none;
   font-size: 1.2rem;
-  color: white;
+  color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-a:link {
-  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* visited link */
-a:visited {
-  color: white;
-}
-
-/* mouse over link */
-a:hover {
+nav a:hover {
   color: rgb(199, 100, 149);
 }
 
-/* selected link */
-a:active {
-  color: white;
+nav a.active {
+  border-bottom: 2px solid rgb(199, 100, 149);
 }
 
+/* APOD container */
 #apod-container {
-  /* this is trying to cap the container width so that the images stop going off screen */
-    width: 100%;
-    margin: 0 auto;
-    display: none;
-  }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: none;
+}
+
+#apod-Image {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+  transition: transform 0.3s ease;
+}
+
+#apod-Image:hover {
+  transform: scale(1.1);
+}
+
+/* APOD Title */
 #apod-title {
-    font-size: 1.4rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  /* THIS IS THE APOD IMAGE SPOT - DONT LOSE */
-  #apod-image {
-    display: block;
-    /* this is aiming to stop it going off screen */
-    max-width: 650px;
-    width: 100%;
-    height: auto;
-    margin: 1rem auto;
-    border: 1px solid #ccc;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
 
-    
-  }
-  #favourite-button {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-image: url('/mtm6302-capstone-seay0006/images/favourites-icon.png'); /* Replace with your image path */
-    background-size: cover; /* Adjust as needed */
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-position: center;
-    width: 50px; /* Adjust width and height to fit the image */
-    height: 50px;
-    border: none; /* Remove default button border */
-    cursor: pointer;
-  }
+/* Favourite button */
+#favourite-button {
+  margin: 15px 0;
+  background-image: url('/mtm6302-capstone-seay0006/images/favourites-icon.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
 
-  #apod-Image:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-  }
+/* Favourites section */
+#favourites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+  padding: 20px;
+}
 
+.favourite-item {
+  background-color: rgba(100, 13, 78, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
 
-/* Mobile Queries - All content above is pre updated sizing */
+.favourite-item:hover {
+  transform: translateY(-5px);
+  border-color: rgb(199, 100, 149);
+}
+
+.favourite-item img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.favourite-item h3, .favourite-item p {
+  margin: 10px 0;
+}
+
+/* Remove button hover */
+.remove-btn:hover {
+  background-color: #ca2020;
+  color: black;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Responsive */
 @media screen and (max-width: 769px) {
-  #apod-container {
-    /* this is setting the max width of the mobile */
-    max-width: 650px;
-    width: 100%;
-    margin: 0 auto;
-    
-  }
   #apod-Image {
-    display: block;
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    margin: 1rem auto;
-    border: 1px solid #ccc;
+    max-width: 100%;
   }
-  #apod-image:hover {
-    transform: scale(1.5);
+  #favourites-list {
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
 }
-/* Tablet Queries */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  #apod-conatiner {
-    /* setting the tablet sized max width */
-    max-width: 700px;
 
-  }
-  #apod-image{
-    /* this should allow a larger image then by default */
-    max-width: 700px;
-    
-
-  }
-  
-}
-/* Desktop Queries */
-@media screen and (min-width: 1025px) {
-  #apod-container {
-    max-width: 1200px;
-  }
+@media screen and (min-width: 770px) and (max-width: 1024px) {
   #apod-Image {
-    max-width: 1200px;
+    max-width: 700px;
   }
-  #apod-image:hover {
-    transform: scale(1.5);
-  }
-  
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  top: auto; /* Ensures it stays at the bottom */
-  left: 0; /* Ensures it starts from the left edge */
-  width: 100%; /* Makes it span the full width */
-  background-color: #333; /* Example styling */
-  color: white; /* Example styling */
-  text-align: center; /* Example styling */
-  padding: 10px 0; /* Example styling */
-  z-index: 1000; /* Ensures it stays above other content */
-}
-footer p {
-  margin: 5px 0; /* Space between paragraphs */
 }
