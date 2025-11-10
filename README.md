@@ -68,10 +68,12 @@ __________________
 8. Experiencing an issue with the js file not finding anything under the name favouritesSection - though it should
 
 9. My website is now working with both the favourites and the html,. though its just sittin at the bottom so now i am doing research to make them switch between the two whilst within a single file
+
+10. Hi colin here... i lost my old file. so i had to recreate this whole thing. which sucked. using my skills i learned from my time working with php (oddly) I got more comfortable editing my css in one file (i dont know why I would be doing this in any other way, this is way easier)
+
+
 _________________________________
 <!-- RESOURCES USED FROM EXTERNAL SOURCES -->
 1. The favourite icon empty is made by : Gregor Cresnar - https://www.flaticon.com/authors/gregor-cresnar
 2. The favourite icon full is made by :  Freepik - https://www.freepik.com/
 3. Background image is pulled from APOD -https://api.nasa.gov/ - key is listed within code
-
-4. 
