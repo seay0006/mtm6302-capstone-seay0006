@@ -97,4 +97,48 @@ nav a.active { border-bottom: 2px solid rgb(199, 100, 149); }
 
 #apod-Image:hover { transform: scale(1.1); }
 
-#apod-title { font-size: 1.4rem; margin-top: 1rem; font-weight: bold;
+#apod-title { font-size: 1.4rem; margin-top: 1rem; font-weight: bold;}
+
+/* styling favourite button */
+#favourite-button {
+  background-image: url('images/favourites-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#favourite-button:hover {
+  transform: scale(1.2);
+}
+.favourite-item {
+  display: inline-block;
+  margin: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.favourite-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.remove-btn {
+  margin-top: 5px;
+  background-color: #c76495;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-btn:hover {
+  background-color: #a04c79;
+}

@@ -11,7 +11,7 @@ const apodSection = document.getElementById('apod-section');
 const favouritesSection = document.getElementById('favourites-section');
 const linkApod = document.getElementById('link-apod');
 const linkFavourites = document.getElementById('link-favourites');
-
+// Nasa Api
 const apiKey = 'jlenSpstq2o0AyuxyfIeUoxfbNrCci1nu8bWzVEC'; 
 let currentApod = null;
 
@@ -84,6 +84,7 @@ function renderFavourites() {
   }
 
   favourites.forEach(apod => {
+
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('favourite-item');
 
