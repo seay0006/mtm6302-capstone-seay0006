@@ -21,17 +21,16 @@
     <form id="apod-form">
       <label for="date-picker">Pick a Date! :D</label>
       <input type="date" id="date-picker" name="date" required>
+      <button id="favourite-button" title="Add to favourites"></button>
       <button type="submit">Get your APOD Image</button>
     </form>
 
-    <div id="apod-container">
+    <div id="apod-container" class="apod-content">
       <img id="apod-Image" src="" alt="Astronomy Picture of the Day">
+      <h2 id="apod-title"></h2>
+      <p id="apod-explanation"></p>
+      <p id="apod-credit"></p>
     </div>
-
-    <h2 id="apod-title"></h2>
-    <p id="apod-explanation"></p>
-    <p id="apod-credit"></p>
-    <button id="favourite-button" title="Add to favourites"></button>
   </section>
 
   <!-- FAVOURITES SECTION -->

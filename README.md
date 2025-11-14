@@ -71,6 +71,8 @@ __________________
 
 10. Hi colin here... i lost my old file. so i had to recreate this whole thing. which sucked. using my skills i learned from my time working with php (oddly) I got more comfortable editing my css in one file (i dont know why I would be doing this in any other way, this is way easier)
 
+11. Updating this favourite button was hard, so i 
+
 
 _________________________________
 <!-- RESOURCES USED FROM EXTERNAL SOURCES -->
