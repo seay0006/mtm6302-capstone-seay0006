@@ -62,7 +62,6 @@ __________________
 
 6. Validator found issues with me having tons of lines of extra code mixed into my work, such as list style types in the body as i was trying to remove old code and ended up with adding it in the wrong place.
 
-    <!-- beginning of part-4 -->
 7. With the new requirements listed, I now need to remove my "favourites.html page and need to build it into the index.html page
 
 8. Experiencing an issue with the js file not finding anything under the name favouritesSection - though it should
@@ -71,7 +70,7 @@ __________________
 
 10. Hi colin here... i lost my old file. so i had to recreate this whole thing. which sucked. using my skills i learned from my time working with php (oddly) I got more comfortable editing my css in one file (i dont know why I would be doing this in any other way, this is way easier)
 
-11. Updating this favourite button was hard, so i 
+11. Updating this favourite button was hard, 
 
 
 _________________________________

@@ -59,7 +59,7 @@ body::after {
   50% { opacity: 0.3; transform: scale(1.1); }
 }
 
-/* Z-index reset for main elements */
+/* z-index reset for main elements */
 h1, nav, section, footer, form, button, img, p, h2, h3 {
   position: relative;
   z-index: 1;
