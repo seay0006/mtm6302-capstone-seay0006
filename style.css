@@ -1,10 +1,13 @@
-/* Reset & global */
+
+/* ===================== */
+/* THIS IS THE GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
@@ -19,7 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Twinkling star background */
 body::before, body::after {
   content: "";
   position: fixed;
@@ -30,7 +32,8 @@ body::before, body::after {
   pointer-events: none;
   z-index: 0;
 }
-
+/* CANNOT FIND THE VIDEO I GOT THESE RANDOM PLACEMENT POINTS FROM */
+/* Twinkling star background */
 body::before {
   background-image:
     radial-gradient(2px 2px at 20% 30%, white, transparent),
@@ -44,6 +47,7 @@ body::before {
   animation: twinkle 6s infinite ease-in-out;
 }
 
+/* Coloured Star Layer */
 body::after {
   background-image:
     radial-gradient(1px 1px at 10% 20%, rgba(86, 3, 173, 0.4), transparent),
@@ -53,13 +57,13 @@ body::after {
   background-size: 250% 250%;
   animation: twinkle 8s infinite ease-in-out reverse;
 }
-
+/* Making them twinkle */
 @keyframes twinkle {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.3; transform: scale(1.1); }
 }
 
-/* z-index reset for main elements */
+/* z-index reset for main elements, brings the elements above the background */
 h1, nav, section, footer, form, button, img, p, h2, h3 {
   position: relative;
   z-index: 1;
@@ -146,6 +150,7 @@ nav a.active {
   color: #8367C7;
 }
 
+/* date input */
 #date-picker {
   flex: 1 1 auto;
   min-width: 180px;
@@ -164,7 +169,7 @@ nav a.active {
   border-color: #5603AD;
   background: rgba(255,255,255,0.12);
 }
-
+/* favourite button/ style into a heart */
 #favourite-button {
   flex: 0 0 auto;
   width: 70px;
@@ -180,6 +185,7 @@ nav a.active {
 }
 
 #favourite-button::before {
+  /* grabbed heart off of reddit forum lol */
   content: "♥";
   font-size: 2.5rem;
   color: #DED9E2;
@@ -298,6 +304,7 @@ nav a.active {
   display: none;
 }
 
+/* favourites grid css */
 #favourites-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
