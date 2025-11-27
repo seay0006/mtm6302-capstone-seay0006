@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- main heading -->
   <h1>Astronomy Picture of the Day</h1>
 
+  <!-- navigation menu -->
   <nav>
     <ul>
       <li><a href="#" id="link-apod" class="active">APOD</a></li>
@@ -18,13 +20,24 @@
 
   <!-- APOD SECTION -->
   <section id="apod-section">
+
+    <!-- APOD form where users can select the dates -->
     <form id="apod-form">
+
+      <!-- picking a date -->
       <label for="date-picker">Pick a Date! :D</label>
+    
+      <!-- date input -->
       <input type="date" id="date-picker" name="date" required>
+
+      <!-- add favourites button -->
       <button id="favourite-button" title="Add to favourites"></button>
+
+      <!-- submit button -->
       <button type="submit">Get your APOD Image</button>
     </form>
 
+    <!-- results container -->
     <div id="apod-container" class="apod-content">
       <img id="apod-Image" src="" alt="Astronomy Picture of the Day">
       <h2 id="apod-title"></h2>
@@ -36,15 +49,17 @@
   <!-- FAVOURITES SECTION -->
   <section id="favourites-section">
     <h1>My Favourite APODs</h1>
+    <!-- the grid that the favourites are all in -->
     <div id="favourites-list"></div>
   </section>
 
+  <!-- FOOTER SECTION -->
   <footer>
     <p>Developed by Colin Seay for MTM6302 - Capstone Project</p>
     <p>Data provided by NASA's APOD API</p>
     <p><a href="https://api.nasa.gov/">https://api.nasa.gov/</a></p>
   </footer>
-
+  <!-- JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>
